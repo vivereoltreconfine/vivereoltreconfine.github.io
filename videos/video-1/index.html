@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materiali — Dove vivere con 1.000€ al mese | Vivere Oltre Confine</title>
+<style>
+  :root{
+    --ink:#14283A;
+    --ink-2:#1C3A52;
+    --paper:#F0EBE0;
+    --paper-dim:#BFC9D4;
+    --accent:#2FB8A6;
+    --accent-light:#74E4D2;
+    --line: rgba(240,235,224,0.14);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:-apple-system,'Segoe UI',Arial,sans-serif;
+    line-height:1.55;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px 90px;}
+
+  .back{
+    display:inline-block;
+    margin:32px 0 0;
+    color:var(--accent-light);
+    text-decoration:none;
+    font-size:14px;
+  }
+  .back:hover{text-decoration:underline;}
+
+  header{padding:24px 0 40px;}
+  header .num{
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--accent-light);
+  }
+  header h1{
+    font-size:clamp(26px,4.5vw,38px);
+    margin:10px 0 14px;
+    letter-spacing:-0.01em;
+  }
+  header p{
+    color:var(--paper-dim);
+    font-size:16px;
+    max-width:640px;
+  }
+
+  .section-label{
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--accent-light);
+    margin:0 0 20px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .section-label::after{content:"";flex:1;height:1px;background:var(--line);}
+
+  .doc-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    margin-bottom:50px;
+  }
+  .doc-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    background:var(--ink-2);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:22px 26px;
+    text-decoration:none;
+    color:var(--paper);
+    transition:border-color 0.15s ease;
+  }
+  .doc-card:hover{border-color:var(--accent);}
+  .youtube-card{
+    background:var(--accent);
+    border-color:var(--accent);
+    color:var(--ink);
+    margin-bottom:36px;
+  }
+  .youtube-card .label{color:var(--ink);opacity:0.7;}
+  .youtube-card .desc{color:var(--ink);opacity:0.75;}
+  .youtube-card .arrow{color:var(--ink);}
+  .youtube-card:hover{border-color:var(--ink);}
+  .doc-card .label{
+    font-size:13px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--accent-light);
+    display:block;
+    margin-bottom:6px;
+  }
+  .doc-card .title{font-size:18px;font-weight:600;margin:0 0 6px;}
+  .doc-card .desc{font-size:13.5px;color:var(--paper-dim);margin:0;}
+  .doc-card .arrow{font-size:22px;color:var(--accent);flex-shrink:0;}
+
+  footer{
+    text-align:center;
+    padding-top:30px;
+    border-top:1px solid var(--line);
+    color:var(--paper-dim);
+    font-size:13px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back" href="../../index.html">← Torna a tutti i video</a>
+
+  <header>
+    <div class="num">Video 1</div>
+    <h1>Dove vivere con 1.000€ al mese</h1>
+    <p>Albania, Grecia, Portogallo, Bulgaria e Romania a confronto: costo della vita voce per voce e un dossier fiscale dettagliato su come viene tassata una pensione privata di 20.000€/anno in ciascun paese.</p>
+  </header>
+
+  <a class="doc-card youtube-card" href="https://www.youtube.com/watch?v=INSERISCI-ID-VIDEO" target="_blank" rel="noopener">
+    <div>
+      <span class="label">Guarda su YouTube</span>
+      <p class="title">▶ Dove vivere con 1.000€ al mese</p>
+      <p class="desc">Apri il video completo direttamente sul canale.</p>
+    </div>
+    <span class="arrow">→</span>
+  </a>
+
+  <div class="section-label">Materiali del video</div>
+  <div class="doc-list">
+
+    <a class="doc-card" href="confronto_dove_vivere_1000_euro.html">
+      <div>
+        <span class="label">Tabella comparativa</span>
+        <p class="title">Dove vivere con 1.000€ — confronto costo della vita</p>
+        <p class="desc">Affitto, spesa, bollette, benzina, internet, dati mobili, ristoranti e sanità per ciascuna delle 5 destinazioni.</p>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="doc-card" href="dossier_fiscale_completo.html">
+      <div>
+        <span class="label">Dossier fiscale</span>
+        <p class="title">Come viene tassata la tua pensione in ciascun paese</p>
+        <p class="desc">Meccanismo, requisiti ed esempio numerico paese per paese, più il confronto finale.</p>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+  </div>
+
+  <footer>Vivere Oltre Confine — Esplora. Decidi. Trasferisciti.</footer>
+
+</div>
+</body>
+</html>
