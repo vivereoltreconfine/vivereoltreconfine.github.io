@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dove Vivere con 1.000€ — Dossier Fiscale Completo</title>
+<style>
+  :root{
+    --ink:#14283A; --ink-2:#1C3A52; --ink-3:#204361;
+    --paper:#F0EBE0; --paper-dim:#BFB9A9; --paper-mute:#8A8577;
+    --brass:#2FB8A6; --brass-light:#74E4D2;
+    --teal:#4CAF7D; --teal-light:#A8E6C6;
+    --red:#A1483D; --red-light:#E3A79C;
+    --line: rgba(240,235,224,0.14);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--ink);color:var(--paper);font-family:'Georgia','Liberation Serif',serif;line-height:1.6;}
+  .sans{font-family:Arial,'Liberation Sans',sans-serif;}
+  .mono{font-family:'Courier New','Liberation Mono',monospace;}
+
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:var(--ink);border-bottom:1px solid var(--line);
+    padding:16px 32px;display:flex;gap:22px;align-items:center;flex-wrap:wrap;
+    font-family:Arial,sans-serif;
+  }
+  nav .brand{font-family:Georgia,serif;font-weight:bold;font-size:16px;color:var(--brass-light);margin-right:10px;}
+  nav a{color:var(--paper-dim);text-decoration:none;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;
+    padding:6px 0;border-bottom:2px solid transparent;}
+  nav a:hover{color:var(--paper);border-color:var(--brass);}
+
+  section{max-width:980px;margin:0 auto;padding:70px 32px 40px;border-bottom:1px solid var(--line);}
+  section:last-child{border-bottom:none;}
+
+  .eyebrow{font-family:Arial,sans-serif;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--brass-light);display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--brass);display:inline-block;}
+  .page-head{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;}
+  h1{font-size:46px;margin:0 0 6px;font-weight:700;letter-spacing:-0.01em;}
+  .city-sub{font-family:Arial,sans-serif;font-size:15px;color:var(--brass-light);letter-spacing:0.03em;margin-bottom:36px;}
+  .flag-big{font-size:52px;line-height:1;}
+
+  h2{font-family:Arial,sans-serif;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--brass-light);margin:44px 0 16px;display:flex;align-items:center;gap:10px;}
+  h2::after{content:"";flex:1;height:1px;background:var(--line);}
+
+  p{font-size:16.5px;color:var(--paper);margin:0 0 14px;max-width:760px;}
+  p.dim{color:var(--paper-dim);}
+
+  .answer-box{
+    background:var(--ink-2);border-left:3px solid var(--teal);padding:22px 26px;margin:22px 0;
+  }
+  .answer-box .q{font-family:Arial,sans-serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--teal-light);margin-bottom:8px;}
+  .answer-box p{margin:0;font-size:16.5px;}
+  .answer-box.negative{border-left-color:var(--red);}
+  .answer-box.negative .q{color:var(--red-light);}
+
+  table{width:100%;border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px;margin:18px 0 8px;}
+  thead th{text-align:left;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--brass-light);
+    padding:10px 14px;border-bottom:1px solid var(--brass);}
+  tbody td{padding:12px 14px;border-bottom:1px solid var(--line);}
+  tbody td:first-child{color:var(--paper-dim);}
+  tbody td.num{font-family:'Courier New',monospace;text-align:right;}
+  tbody tr.highlight td{color:var(--teal-light);font-weight:bold;}
+  tbody tr.highlight-neg td{color:var(--red-light);}
+  table.compare tbody tr:last-child td{background:rgba(176,141,87,0.07);}
+
+  .checklist{list-style:none;padding:0;margin:14px 0 10px;font-family:Arial,sans-serif;font-size:14.5px;}
+  .checklist li{padding:9px 0 9px 28px;border-bottom:1px solid var(--line);position:relative;color:var(--paper-dim);}
+  .checklist li::before{content:"—";position:absolute;left:0;color:var(--brass);}
+  .checklist li b{color:var(--paper);}
+
+  .caveat{
+    background:rgba(161,72,61,0.09);border:1px solid rgba(161,72,61,0.4);
+    padding:16px 20px;margin:22px 0;font-family:Arial,sans-serif;font-size:13.5px;color:var(--red-light);
+  }
+  .caveat b{color:var(--paper);}
+
+  .footnote{font-family:Arial,sans-serif;font-size:12px;color:var(--paper-mute);margin-top:30px;
+    border-top:1px solid var(--line);padding-top:16px;}
+
+  .grid5{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:26px 0 44px;}
+  .mini-card{background:var(--ink-2);border:1px solid var(--line);padding:18px 20px;}
+  .mini-card .flag{font-size:26px;}
+  .mini-card .name{font-family:Arial,sans-serif;font-weight:bold;font-size:15px;margin:8px 0 2px;}
+  .mini-card .tax{font-family:'Courier New',monospace;font-size:26px;margin-top:10px;}
+  .mini-card .tax.good{color:var(--teal-light);}
+  .mini-card .tax.bad{color:var(--red-light);}
+  .mini-card .sub{font-family:Arial,sans-serif;font-size:11.5px;color:var(--paper-mute);margin-top:4px;}
+
+  .barchart{margin:30px 0 40px;}
+  .bar-row{display:flex;align-items:center;gap:16px;margin-bottom:16px;}
+  .bar-label{width:150px;font-family:Arial,sans-serif;font-size:13.5px;color:var(--paper-dim);flex-shrink:0;}
+  .bar-track{flex:1;background:var(--ink-2);height:34px;position:relative;}
+  .bar-fill{height:100%;background:linear-gradient(90deg,var(--brass),var(--brass-light));display:flex;align-items:center;
+    justify-content:flex-end;padding-right:10px;}
+  .bar-fill.zero{background:var(--teal);width:2px !important;}
+  .bar-fill span{font-family:'Courier New',monospace;font-size:13px;color:var(--ink);font-weight:bold;}
+  .bar-fill.zero span{position:absolute;left:8px;color:var(--teal-light);}
+
+  .verdict-final{
+    background:linear-gradient(180deg, rgba(176,141,87,0.08), transparent);
+    border:1px solid var(--brass);padding:30px 34px;margin:40px 0;
+  }
+  .verdict-final h3{font-family:Georgia,serif;font-size:22px;margin:0 0 12px;}
+  .verdict-final p{margin:0 0 10px;}
+
+  @media (max-width:640px){
+    section{padding:50px 20px 30px;}
+    h1{font-size:34px;}
+    .page-head{flex-direction:column;}
+    .bar-label{width:100px;font-size:12px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">Vivere Oltre Confine</span>
+  <a href="#albania">Albania</a>
+  <a href="#grecia">Grecia</a>
+  <a href="#portogallo">Portogallo</a>
+  <a href="#bulgaria">Bulgaria</a>
+  <a href="#romania">Romania</a>
+  <a href="#confronto">Confronto finale</a>
+</nav>
+
+<!-- ================= ALBANIA ================= -->
+<section id="albania">
+  <div class="eyebrow">Dossier fiscale — pagina 1 di 6</div>
+  <div class="page-head">
+    <div>
+      <h1>Albania</h1>
+      <div class="city-sub sans">VLORË (VALONA) — REGIME PENSIONE PRIVATA 0%</div>
+    </div>
+    <div class="flag-big">🇦🇱</div>
+  </div>
+
+  <h2>Come funziona davvero</h2>
+  <p>L'Albania non tassa i redditi da pensione privata percepiti da residenti stranieri. Questo non nasce da un'aliquota
+  agevolata come in Grecia, ma dall'incrocio tra due norme: la Convenzione contro le doppie imposizioni tra Italia e
+  Albania (che assegna il diritto di tassare le pensioni <b>private</b> al solo paese di residenza) e l'aliquota
+  interna albanese, che oggi è pari a zero su questi redditi. Il risultato pratico: l'INPS smette di applicare le
+  ritenute IRPEF alla fonte e accredita la pensione al lordo.</p>
+
+  <div class="answer-box">
+    <div class="q sans">La tua pensione italiana viene tassata?</div>
+    <p><b>No, se è una pensione da lavoro privato</b> (dipendente d'azienda, commerciante, artigiano, libero
+    professionista con cassa autonoma) e sposti davvero la residenza fiscale in Albania per più di 183 giorni l'anno.
+    <b>Sì, resta tassata in Italia con l'IRPEF ordinaria</b> se sei un ex dipendente pubblico, insegnante, militare o
+    hai lavorato per Stato, Regioni, Comuni o ASL — per queste pensioni la Convenzione assegna il diritto di tassare
+    all'Italia, indipendentemente da dove vivi.</p>
+  </div>
+
+  <h2>Esempio numerico — pensione privata lorda 20.000€/anno</h2>
+  <table>
+    <thead><tr><th>Voce</th><th style="text-align:right">Importo</th></tr></thead>
+    <tbody>
+      <tr><td>Pensione lorda annua</td><td class="num">20.000 €</td></tr>
+      <tr><td>IRPEF che pagheresti restando in Italia (23%, unico scaglione)</td><td class="num">≈ 4.600 €</td></tr>
+      <tr><td>Tasse dovute in Albania (residente, pensione privata)</td><td class="num">0 €</td></tr>
+      <tr class="highlight"><td>Risparmio netto annuo</td><td class="num">≈ 4.600 € (+100%)</td></tr>
+    </tbody>
+  </table>
+  <p class="dim" style="font-size:13px;">Calcolo su aliquote IRPEF 2026 (23% fino a 28.000€: a 20.000€ resti interamente nel primo scaglione), al lordo di addizionali regionali/comunali e detrazioni personali, che aumenterebbero ulteriormente il vantaggio.</p>
+
+  <h2>Requisiti per ottenerlo</h2>
+  <ul class="checklist">
+    <li><b>Residenza effettiva</b> in Albania per oltre 183 giorni l'anno, non solo iscrizione anagrafica</li>
+    <li><b>Iscrizione AIRE</b> entro 90 giorni dal trasferimento, tramite il portale Fast It</li>
+    <li><b>Centro degli interessi vitali</b> spostato: casa, utenze, medico di base, non solo un affitto simbolico</li>
+    <li>Domanda di detassazione all'INPS con modello <b>EP-I/1</b>, vidimato dalle autorità fiscali albanesi</li>
+    <li>Copertura sanitaria privata valida in Albania</li>
+  </ul>
+
+  <div class="caveat">
+    <b>Attenzione:</b> a inizio 2026 è emersa un'incertezza interpretativa tra alcune autorità albanesi su una
+    possibile tassazione al 15% (lettura basata sulla Legge 29/2023) in contrasto con l'esenzione 0% prevista dalla
+    Convenzione bilaterale. Circolano anche voci non ufficiali su un'eventuale futura flat tax al 5-10% per i
+    pensionati stranieri. Nulla è ancora deciso, ma chi pianifica il trasferimento oggi dovrebbe monitorare gli
+    sviluppi e non dare per scontato che lo 0% resti invariato per sempre. L'Agenzia delle Entrate italiana inoltre
+    controlla attivamente questi trasferimenti: mantenere casa, utenze o medico di base in Italia è un segnale di
+    rischio in caso di accertamento.
+  </div>
+  <p class="footnote">Fonti: Convenzione Italia-Albania (L. 175/1998), Legge albanese 29/2023, Agenzia delle Entrate. Verificare sempre con un fiscalista prima di agire — informazioni generali, non consulenza personalizzata.</p>
+</section>
+
+<!-- ================= GRECIA ================= -->
+<section id="grecia">
+  <div class="eyebrow">Dossier fiscale — pagina 2 di 6</div>
+  <div class="page-head">
+    <div>
+      <h1>Grecia</h1>
+      <div class="city-sub sans">SALONICCO (THESSALONIKI) — FLAT TAX 7% PER 15 ANNI</div>
+    </div>
+    <div class="flag-big">🇬🇷</div>
+  </div>
+
+  <h2>Come funziona davvero</h2>
+  <p>Dal 2020 la Grecia offre un regime specifico (Articolo 5B del Codice Fiscale greco, Legge 4172/2013) per
+  pensionati stranieri che trasferiscono la residenza fiscale in Grecia: una flat tax del <b>7%</b> su pensione e
+  redditi esteri, valida per <b>15 anni</b> consecutivi. Non è un'esenzione totale come in Albania, ma un'aliquota
+  fissa molto più bassa di qualsiasi scaglione IRPEF italiano — e a differenza di altri regimi europei, oggi è uno
+  dei pochi ancora pienamente operativi e non in fase di restrizione.</p>
+
+  <div class="answer-box">
+    <div class="q sans">La tua pensione italiana viene tassata?</div>
+    <p><b>Sì, ma solo al 7%</b> — e solo se la pensione deriva da lavoro <b>privato</b> (stessa distinzione vista in
+    Albania). Per le pensioni <b>pubbliche</b> (ex statali, insegnanti, forze dell'ordine, dipendenti di enti
+    pubblici) la Convenzione contro le doppie imposizioni lascia il diritto di tassare all'Italia: il regime greco
+    del 7% non si applica e continui a pagare l'IRPEF ordinaria come se fossi residente in Italia.</p>
+  </div>
+
+  <h2>Esempio numerico — pensione privata lorda 20.000€/anno</h2>
+  <table>
+    <thead><tr><th>Voce</th><th style="text-align:right">Importo</th></tr></thead>
+    <tbody>
+      <tr><td>Pensione lorda annua</td><td class="num">20.000 €</td></tr>
+      <tr><td>IRPEF che pagheresti restando in Italia</td><td class="num">≈ 4.600 €</td></tr>
+      <tr><td>Flat tax 7% in Grecia</td><td class="num">1.400 €</td></tr>
+      <tr class="highlight"><td>Risparmio netto annuo</td><td class="num">≈ 3.200 € (−70%)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Requisiti per ottenerlo</h2>
+  <ul class="checklist">
+    <li>Non essere stato <b>residente fiscale in Grecia</b> per almeno 5 dei 6 anni precedenti il trasferimento</li>
+    <li>Domanda alle autorità fiscali greche entro il <b>31 marzo</b> dell'anno di riferimento (60 giorni per la risposta)</li>
+    <li>Il paese di provenienza deve avere un accordo di cooperazione fiscale con la Grecia — l'Italia lo soddisfa (trattato del 1989)</li>
+    <li>Permanenza effettiva di almeno <b>183 giorni l'anno</b> in Grecia</li>
+    <li>Versamento dell'imposta forfettaria in un'unica soluzione, entro luglio</li>
+  </ul>
+
+  <div class="caveat">
+    <b>Attenzione:</b> la sanità pubblica ellenica ha subito tagli negli anni della crisi. La maggior parte dei
+    pensionati stranieri destina parte del risparmio fiscale a una polizza sanitaria privata per accedere a
+    strutture moderne senza liste d'attesa. Inoltre, il clima estivo può essere impegnativo per chi soffre di
+    pressione alta.
+  </div>
+  <p class="footnote">Fonti: Art. 5B Legge greca 4172/2013, Convenzione Italia-Grecia (L. 445/1989), Agenzia delle Entrate. Verificare sempre con un fiscalista.</p>
+</section>
+
+<!-- ================= PORTOGALLO ================= -->
+<section id="portogallo">
+  <div class="eyebrow">Dossier fiscale — pagina 3 di 6</div>
+  <div class="page-head">
+    <div>
+      <h1>Portogallo</h1>
+      <div class="city-sub sans">BRAGA — IL VECCHIO NHR NON ESISTE PIÙ</div>
+    </div>
+    <div class="flag-big">🇵🇹</div>
+  </div>
+
+  <h2>Come funziona davvero</h2>
+  <p>Fino al 2023 il Portogallo era la meta fiscale per eccellenza grazie al regime NHR (Non-Habitual Resident):
+  esenzione totale sulle pensioni estere fino al 2020, poi una flat tax al 10%. Quel regime è stato <b>chiuso
+  definitivamente ai nuovi ingressi dal 2024</b> e sostituito dall'IFICI ("NHR 2.0"), riservato esclusivamente a
+  professionisti altamente qualificati in ricerca e innovazione — <b>i pensionati sono esplicitamente esclusi</b>.
+  Oggi chi si trasferisce in Portogallo da pensionato paga l'IRS, l'imposta ordinaria portoghese, con aliquote
+  progressive che vanno dal 13,25% al 48% su 9 scaglioni.</p>
+
+  <div class="answer-box negative">
+    <div class="q sans">La tua pensione italiana viene tassata?</div>
+    <p><b>Sì, con l'IRS ordinario, senza nessuna agevolazione specifica per pensionati.</b> Chi aveva già ottenuto lo
+    status NHR prima della chiusura mantiene il beneficio fino al completamento dei 10 anni, ma per chiunque si
+    trasferisca oggi quel vantaggio semplicemente non esiste più. La buona notizia: su un reddito medio-basso come
+    quello di questo esempio, i primi scaglioni IRS portoghesi restano comunque più leggeri di quelli italiani, quindi
+    un vantaggio reale, anche se modesto, sopravvive.</p>
+  </div>
+
+  <h2>Esempio numerico — pensione privata lorda 20.000€/anno</h2>
+  <table>
+    <thead><tr><th>Voce</th><th style="text-align:right">Importo</th></tr></thead>
+    <tbody>
+      <tr><td>Pensione lorda annua</td><td class="num">20.000 €</td></tr>
+      <tr><td>IRPEF che pagheresti restando in Italia</td><td class="num">≈ 4.600 €</td></tr>
+      <tr><td>IRS ordinario in Portogallo (scaglioni 2026, prima di detrazioni)</td><td class="num">≈ 3.600 €</td></tr>
+      <tr class="highlight"><td>Risparmio netto annuo</td><td class="num">≈ 1.000 € (−22%)</td></tr>
+    </tbody>
+  </table>
+  <p class="dim" style="font-size:13px;">Calcolo sui 9 scaglioni IRS 2026 (13,25%–25% nelle fasce rilevanti per questo reddito), escluse eventuali sovrattasse comunali (0-1,5%, a Braga tipicamente contenute) e detrazioni personali che ridurrebbero ulteriormente l'importo.</p>
+
+  <h2>Perché resta comunque in questa lista</h2>
+  <p>Braga offre sanità pubblica tra le migliori d'Europa (23ª posizione mondiale secondo l'Healthcare Index di
+  Numbeo), sicurezza, e un costo della vita più basso di Lisbona e Porto. A questo livello di reddito il vantaggio
+  fiscale, seppur ridimensionato rispetto all'epoca NHR, non è del tutto scomparso: si somma alla qualità della vita,
+  non la sostituisce più come motivo principale del trasferimento.</p>
+
+  <div class="caveat">
+    <b>Attenzione:</b> chi ha già NHR attivo prima della chiusura mantiene i vecchi vantaggi fino a fine decennio —
+    ma non è possibile richiederlo ex novo. Diffida di consulenti o articoli che promettono ancora "zero tasse in
+    Portogallo": da gennaio 2024 non corrisponde più al vero per i nuovi trasferimenti, e il vantaggio residuo si
+    riduce ulteriormente al crescere del reddito.
+  </div>
+  <p class="footnote">Fonti: IFICI Legge 30/2024, Codice IRS portoghese (CIRS), Numbeo Healthcare Index 2025. Verificare sempre con un fiscalista.</p>
+</section>
+
+<!-- ================= BULGARIA ================= -->
+<section id="bulgaria">
+  <div class="eyebrow">Dossier fiscale — pagina 4 di 6</div>
+  <div class="page-head">
+    <div>
+      <h1>Bulgaria</h1>
+      <div class="city-sub sans">VARNA — LA FLAT TAX PIÙ FAMOSA D'EUROPA, MA NON PER LE PENSIONI</div>
+    </div>
+    <div class="flag-big">🇧🇬</div>
+  </div>
+
+  <h2>Come funziona davvero</h2>
+  <p>La Bulgaria applica dal 2008 una flat tax del <b>10%</b> su (quasi) tutti i redditi personali, una delle
+  aliquote più basse d'Europa. Varna, sul Mar Nero, è la meta costiera più gettonata dagli espatriati per il basso
+  costo della vita e il clima mite. Sulla carta sembra il regime perfetto anche per una pensione italiana — ma qui
+  c'è una clausola quasi unica in Europa che va capita bene prima di trasferirsi.</p>
+
+  <div class="answer-box negative">
+    <div class="q sans">La tua pensione italiana viene tassata?</div>
+    <p><b>Sì, quasi certamente resta tassata in Italia, sia che sia una pensione privata sia pubblica.</b> La
+    Convenzione Italia-Bulgaria del 1988 definisce "residente" — ai fini del trattato, solo per la parte bulgara —
+    come chi possiede la <b>cittadinanza bulgara</b>, non semplicemente chi vi risiede. Dal 2023 (interpello Agenzia
+    delle Entrate 244/2023 e messaggio INPS 1270/2023), questa lettura è stata confermata in modo esplicito: senza
+    passaporto bulgaro, la pensione INPS continua a essere tassata in Italia con l'IRPEF ordinaria, indipendentemente
+    da AIRE e residenza effettiva. È l'unico paese di questa lista dove la residenza da sola non basta.</p>
+  </div>
+
+  <h2>Esempio numerico — pensione privata lorda 20.000€/anno</h2>
+  <table>
+    <thead><tr><th>Voce</th><th style="text-align:right">Importo</th></tr></thead>
+    <tbody>
+      <tr><td>Pensione lorda annua</td><td class="num">20.000 €</td></tr>
+      <tr><td>IRPEF dovuta in Italia (residenza bulgara, senza cittadinanza)</td><td class="num">≈ 4.600 €</td></tr>
+      <tr><td>Tasse in Bulgaria, se si ottiene la cittadinanza bulgara (10% flat)</td><td class="num">2.000 €</td></tr>
+      <tr class="highlight-neg"><td>Risparmio reale oggi, senza cittadinanza</td><td class="num">0 € — nessun vantaggio</td></tr>
+    </tbody>
+  </table>
+  <p class="dim" style="font-size:13px;">La colonna "2.000€" è raggiungibile solo dopo naturalizzazione bulgara, un percorso che richiede tipicamente diversi anni di residenza continuativa più esame di lingua — non è un'opzione realistica nel breve periodo.</p>
+
+  <h2>Dove invece la Bulgaria conviene davvero</h2>
+  <p>Il 10% flat resta pienamente valido, senza clausole di cittadinanza, per <b>redditi da lavoro, da libera
+  professione o da impresa</b> prodotti e tassati come residente in Bulgaria (non redditi da pensione italiana).
+  Chi lavora da remoto, ha una partita IVA locale o apre un'attività trova qui una delle fiscalità più leggere
+  d'Europa, senza il nodo Convenzione che riguarda specificamente le pensioni.</p>
+
+  <div class="caveat">
+    <b>Attenzione:</b> per anni molti pensionati italiani si sono trasferiti a Varna o Sofia convinti dello sconto
+    fiscale al 10%, basandosi su un'interpretazione dell'INPS poi rovesciata nel 2023. Chi lo aveva già ottenuto si
+    trova ora in contenzioso con richieste di arretrati. È in corso una trattativa tra i governi italiano e bulgaro
+    per rimuovere la clausola di nazionalità, ma ad oggi (2026) non è ancora stata modificata: non dare per scontato
+    che cambi a breve.
+  </div>
+  <p class="footnote">Fonti: Convenzione Italia-Bulgaria (1988/1990), interpello Agenzia delle Entrate 244/2023, messaggio INPS 1270/2023. Verificare sempre con un fiscalista.</p>
+</section>
+
+<!-- ================= ROMANIA ================= -->
+<section id="romania">
+  <div class="eyebrow">Dossier fiscale — pagina 5 di 6</div>
+  <div class="page-head">
+    <div>
+      <h1>Romania</h1>
+      <div class="city-sub sans">COSTANZA (CONSTANȚA) — FLAT TAX 10% CON UNA SOGLIA ESENTE, PIÙ UN CONTRIBUTO SANITARIO DA NON DIMENTICARE</div>
+    </div>
+    <div class="flag-big">🇷🇴</div>
+  </div>
+
+  <h2>Come funziona davvero</h2>
+  <p>La Romania tassa il reddito personale con una flat tax del <b>10%</b>, ma per le pensioni esiste una soglia
+  esente di <b>3.000 RON al mese</b> (circa 600€) sotto la quale non si paga nulla. Dal 1° settembre 2025 è però
+  entrato in vigore un contributo sanitario obbligatorio (<b>CASS</b>) del <b>10%</b> sulla parte di pensione che
+  supera quella soglia — un dettaglio che molte guide online ancora omettono, e che raddoppia di fatto l'aliquota
+  reale sulla parte tassabile. Su una pensione più contenuta come questa, la soglia esente pesa proporzionalmente
+  di più, rendendo il risparmio ancora più marcato rispetto a una pensione alta. Costanza, sul Mar Nero, è la
+  principale città costiera del paese: più cara della media rumena ma con infrastrutture e servizi nettamente
+  migliori delle zone interne.</p>
+
+  <div class="answer-box">
+    <div class="q sans">La tua pensione italiana viene tassata?</div>
+    <p><b>Sì, ma solo sulla parte che eccede i 3.000 RON/mese</b> — e su quella parte pagherai il 10% di imposta sul
+    reddito <b>più</b> il 10% di CASS, per un totale effettivo del 20% sulla quota eccedente. A differenza della
+    Bulgaria, qui vale lo schema standard: pensione <b>privata</b> detassata in Italia con la sola residenza fiscale
+    (Art. 18 della Convenzione), pensione <b>pubblica</b> (ex statali, insegnanti, forze dell'ordine) sempre tassata
+    in Italia, a meno di cittadinanza romena.</p>
+  </div>
+
+  <h2>Esempio numerico — pensione privata lorda 20.000€/anno (1.667€/mese)</h2>
+  <table>
+    <thead><tr><th>Voce</th><th style="text-align:right">Importo</th></tr></thead>
+    <tbody>
+      <tr><td>Pensione lorda mensile</td><td class="num">1.667 €</td></tr>
+      <tr><td>Soglia esente (3.000 RON ≈ 600€/mese)</td><td class="num">− 600 €</td></tr>
+      <tr><td>Base imponibile mensile</td><td class="num">1.067 €</td></tr>
+      <tr><td>Imposta sul reddito 10% (mensile)</td><td class="num">107 €</td></tr>
+      <tr><td>Contributo sanitario CASS 10% (mensile)</td><td class="num">107 €</td></tr>
+      <tr><td>Totale dovuto in Romania (annuo)</td><td class="num">≈ 2.560 €</td></tr>
+      <tr><td>IRPEF che pagheresti restando in Italia (annuo)</td><td class="num">≈ 4.600 €</td></tr>
+      <tr class="highlight"><td>Risparmio netto annuo</td><td class="num">≈ 2.040 € (−44%)</td></tr>
+    </tbody>
+  </table>
+  <p class="dim" style="font-size:13px;">Cambio RON/EUR indicativo (≈5 RON per 1€), da verificare al momento del trasferimento. Su questo reddito più contenuto la soglia esente incide di più: il risparmio percentuale è maggiore rispetto a una pensione da 30.000€/anno.</p>
+
+  <h2>Requisiti per ottenerlo</h2>
+  <ul class="checklist">
+    <li><b>Residenza fiscale effettiva</b> in Romania, oltre 183 giorni l'anno</li>
+    <li>Iscrizione <b>AIRE</b> entro 90 giorni dal trasferimento</li>
+    <li>Richiesta all'INPS con modello <b>EP-I</b>, vidimato dall'autorità fiscale romena, per ottenere la pensione al lordo</li>
+    <li>Nessun requisito di cittadinanza per le pensioni private (a differenza della Bulgaria)</li>
+  </ul>
+
+  <div class="caveat">
+    <b>Attenzione:</b> il CASS al 10% sulla parte eccedente è una novità recente (settembre 2025): molte guide e
+    consulenti online pubblicizzano ancora solo il "10% flat" ignorando questo contributo aggiuntivo, gonfiando il
+    risparmio reale. Verifica sempre l'aliquota complessiva aggiornata prima di decidere.
+  </div>
+  <p class="footnote">Fonti: Codul Fiscal rumeno, normativa CASS 2025, Convenzione Italia-Romania. Verificare sempre con un fiscalista.</p>
+</section>
+
+<!-- ================= CONFRONTO FINALE ================= -->
+<section id="confronto">
+  <div class="eyebrow">Dossier fiscale — pagina 6 di 6</div>
+  <h1>Il confronto finale</h1>
+  <div class="city-sub sans">PENSIONE PRIVATA LORDA 20.000€/ANNO — TASSE DOVUTE NEL PAESE ESTERO SCELTO</div>
+
+  <div class="grid5">
+    <div class="mini-card">
+      <div class="flag">🇮🇹</div>
+      <div class="name sans">Italia (baseline)</div>
+      <div class="tax bad">4.600 €</div>
+      <div class="sub sans">IRPEF ordinaria, 23% effettivo</div>
+    </div>
+    <div class="mini-card">
+      <div class="flag">🇦🇱</div>
+      <div class="name sans">Albania · Vlorë</div>
+      <div class="tax good">0 €</div>
+      <div class="sub sans">Esenzione totale, pensione privata</div>
+    </div>
+    <div class="mini-card">
+      <div class="flag">🇬🇷</div>
+      <div class="name sans">Grecia · Salonicco</div>
+      <div class="tax good">1.400 €</div>
+      <div class="sub sans">Flat tax 7%, per 15 anni</div>
+    </div>
+    <div class="mini-card">
+      <div class="flag">🇵🇹</div>
+      <div class="name sans">Portogallo · Braga</div>
+      <div class="tax good">3.600 €</div>
+      <div class="sub sans">IRS ordinario, vantaggio modesto</div>
+    </div>
+    <div class="mini-card">
+      <div class="flag">🇧🇬</div>
+      <div class="name sans">Bulgaria · Varna</div>
+      <div class="tax bad">4.600 €</div>
+      <div class="sub sans">Nessun vantaggio senza cittadinanza</div>
+    </div>
+    <div class="mini-card">
+      <div class="flag">🇷🇴</div>
+      <div class="name sans">Romania · Costanza</div>
+      <div class="tax good">2.560 €</div>
+      <div class="sub sans">10% + CASS 10% sull'eccedenza</div>
+    </div>
+  </div>
+
+  <h2>Tasse dovute, a colpo d'occhio</h2>
+  <div class="barchart">
+    <div class="bar-row">
+      <div class="bar-label sans">Italia</div>
+      <div class="bar-track"><div class="bar-fill" style="width:100%;"><span>4.600 €</span></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label sans">Bulgaria</div>
+      <div class="bar-track"><div class="bar-fill" style="width:100%;"><span>4.600 €</span></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label sans">Portogallo</div>
+      <div class="bar-track"><div class="bar-fill" style="width:78.3%;"><span>3.600 €</span></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label sans">Romania</div>
+      <div class="bar-track"><div class="bar-fill" style="width:55.7%;"><span>2.560 €</span></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label sans">Grecia</div>
+      <div class="bar-track"><div class="bar-fill" style="width:30.4%;"><span>1.400 €</span></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label sans">Albania</div>
+      <div class="bar-track"><div class="bar-fill zero"><span>0 €</span></div></div>
+    </div>
+  </div>
+
+  <h2>Tabella di sintesi completa</h2>
+  <table class="compare">
+    <thead>
+      <tr><th>Paese</th><th>Regime</th><th>Aliquota effettiva</th><th>Pensione pubblica</th><th>Durata / stabilità</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Albania</td>
+        <td>Esenzione totale (trattato + aliquota interna 0%)</td>
+        <td class="num">0%</td>
+        <td>Resta tassata in Italia</td>
+        <td>Nessuna scadenza formale, ma interpretazione in discussione nel 2026</td>
+      </tr>
+      <tr>
+        <td>Grecia</td>
+        <td>Flat tax pensionati esteri (Art. 5B)</td>
+        <td class="num">7%</td>
+        <td>Resta tassata in Italia</td>
+        <td>15 anni dalla richiesta, regime stabile</td>
+      </tr>
+      <tr>
+        <td>Portogallo</td>
+        <td>IRS ordinario (NHR chiuso dal 2024)</td>
+        <td class="num">~18%</td>
+        <td>Resta tassata in Italia</td>
+        <td>Nessun regime speciale, aliquote ordinarie stabili</td>
+      </tr>
+      <tr class="highlight-neg">
+        <td>Bulgaria</td>
+        <td>Flat 10% interna, ma clausola di cittadinanza nella Convenzione blocca lo spostamento della tassazione</td>
+        <td class="num">~23% (invariato)</td>
+        <td>Resta tassata in Italia</td>
+        <td>Trattativa in corso tra i due governi, esito incerto</td>
+      </tr>
+      <tr class="highlight">
+        <td>Romania</td>
+        <td>10% flat + CASS 10% sanitario sull'eccedenza oltre 3.000 RON/mese</td>
+        <td class="num">~13%</td>
+        <td>Resta tassata in Italia</td>
+        <td>CASS introdotto a settembre 2025, regime recente</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="verdict-final">
+    <h3>Il verdetto</h3>
+    <p>Su una pensione <b>privata</b> di 20.000€/anno, la classifica non cambia rispetto a redditi più alti, ma le
+    proporzioni sì. L'Albania resta l'opzione più netta: esenzione totale. La Grecia conferma il suo regime solido e
+    prevedibile al 7%. La Romania, su questo reddito più contenuto, diventa relativamente più conveniente perché la
+    soglia esente mensile pesa di più. Il Portogallo, che a 30.000€ era sostanzialmente pari all'Italia, qui torna a
+    offrire un vantaggio reale (seppur modesto) perché i primi scaglioni IRS restano più leggeri dell'IRPEF italiana.
+    La Bulgaria resta la scelta <b>meno indicata</b> per chi punta solo al risparmio fiscale sulla pensione: senza
+    cittadinanza bulgara, il vantaggio non esiste, a prescindere dall'importo.</p>
+    <p>E per chi ha una pensione <b>pubblica</b>: nessuno di questi regimi si applica, in nessuno dei cinque paesi.
+    In quel caso, la vera domanda non è "dove pago meno tasse", ma "dove vivo meglio con lo stesso netto" — ed è lì
+    che entra in gioco il costo della vita di cui abbiamo parlato nel video, non il fisco.</p>
+  </div>
+
+  <p class="footnote">Tutti i calcoli sono stime illustrative su una pensione privata lorda di 20.000€/anno, aliquote IRPEF/IRS/greche/rumene in vigore a luglio 2026, al lordo di addizionali locali e detrazioni personali che variano caso per caso. Questa pagina non costituisce consulenza fiscale: ogni situazione individuale va verificata con un commercialista o fiscalista internazionale prima di qualsiasi decisione di trasferimento.</p>
+</section>
+
+</body>
+</html>
